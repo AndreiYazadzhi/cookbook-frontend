@@ -11,7 +11,8 @@ import {RecipeService} from '../recipe.service';
 export class RecipeHistoryComponent implements OnInit {
 
   id: number;
-  recipes: string;
+  recipesString: string[];
+  recipes: Recipe[] = [];
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService) {
@@ -20,7 +21,8 @@ export class RecipeHistoryComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.recipeService.showHistory(this.id).subscribe(data => {
-      this.recipes = JSON.stringify(data);
+      this.recipesString = data;
+      this.recipesString.forEach(el => this.recipes.push(JSON.parse(el)));
     });
   }
 }

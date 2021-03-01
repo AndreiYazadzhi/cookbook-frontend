@@ -24,8 +24,8 @@ export class RecipeService {
     return this.httpClient.get<Recipe>(this.baseURL + id);
   }
 
-  showHistory(id: number): Observable<string> {
-    return this.httpClient.get<string>(this.baseURL + 'history/' + id);
+  showHistory(id: number): Observable<string[]> {
+    return this.httpClient.get<string[]>(this.baseURL + 'history/' + id);
   }
 
   updateRecipe(id: number, recipe: Recipe): Observable<Recipe> {

@@ -1,5 +1,20 @@
 <h2> Recipe History</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Text</th>
+    <th>Forked</th>
+  </tr>
+  </thead>
+  <tbody>
 
-<body>
-  <div>{{ recipes }}</div>
-</body>
+  <tr *ngFor = "let recipe of recipes">
+    <td>{{ recipe.title }}</td>
+    <td>{{ recipe.description }}</td>
+    <td>{{ recipe.text }}</td>
+    <td>{{ recipe.parent != null ? recipe.parent.title : "-"}}</td>
+  </tr>
+  </tbody>
+</table>
