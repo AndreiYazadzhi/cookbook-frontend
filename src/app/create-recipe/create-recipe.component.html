@@ -1,0 +1,35 @@
+<h3>Update Recipe</h3>
+<div class="col-md-6 offset-md-3">
+  <form (ngSubmit) = "onSubmit()">
+    <style>
+      .layer1 {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+      }
+    </style>
+    <div class = "form-group">
+      <label> Title</label>
+      <input type = "text" class = "form-control" id = "title"
+             [(ngModel)] = "recipe.title" name = "title">
+    </div>
+
+    <div class = "form-group">
+      <label> Description</label>
+      <input type = "text" class = "form-control" id = "description"
+             [(ngModel)] = "recipe.description" name = "description">
+    </div>
+
+    <div class="form-group">
+      <label> Text</label>
+      <input type = "text" class = "layer1" id = "text"
+             [(ngModel)] = "recipe.text" name = "text" >
+    </div>
+
+    <button class = "btn btn-success" type = "submit">Submit</button>
+  </form>
+</div>

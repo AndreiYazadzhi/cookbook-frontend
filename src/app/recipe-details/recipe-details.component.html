@@ -1,0 +1,16 @@
+<h3> View Recipe Details</h3>
+<div>
+  <div>
+    <label> <b> Title: </b></label> {{recipe.title}}
+  </div>
+  <div>
+    <label> <b> Description: </b></label> {{recipe.description}}
+  </div>
+  <div>
+    <label> <b> Fork: </b></label> {{recipe.parent != null ? recipe.parent.title : "-"}}
+  </div>
+  <div>
+    <label> <b> Text: </b></label> {{recipe.text}}
+  </div>
+  <button (click) = "showHistory(recipe.id)" class = "btn btn-info"> Show history</button>
+</div>

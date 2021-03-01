@@ -1,0 +1,28 @@
+<h2> Recipe List</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Forked</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor = "let recipe of recipes">
+    <td>{{ recipe.title }}</td>
+    <td>{{ recipe.description }}</td>
+    <td>{{ recipe.date }}</td>
+    <td>{{ recipe.parent != null ? recipe.parent.title : "-"}}</td>
+    <td>
+      <button (click) = "updateRecipe(recipe.id)" class = "btn btn-info"> Update</button>
+      <button (click) = "deleteRecipe(recipe.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+      <button (click) = "forkRecipe(recipe.id)" class = "btn btn-info" style="margin-left: 10px"> Fork</button>
+      <button (click) = "recipeDetails(recipe.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
